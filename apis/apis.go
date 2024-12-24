@@ -24,6 +24,6 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Serve() {
-	http.HandleFunc("/api", UserHandler)
+	http.HandleFunc("/api2", UserHandler)
 
 }

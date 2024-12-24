@@ -20,7 +20,7 @@ func getHello(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Hello api called!\n")
 }
 func main() {
-	fmt.Println("Hello world")
+	fmt.Println("Hello  world")
 	//http.HandleFunc("/", getRoot)
 	//http.HandleFunc("/endpoint", getHello)
 	funcs.Serve()

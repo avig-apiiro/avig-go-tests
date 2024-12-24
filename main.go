@@ -1,6 +1,7 @@
 package main
 
 import (
+	"avig-go-tests/apis"
 	"avig-go-tests/funcs"
 	"errors"
 	"fmt"
@@ -24,7 +25,7 @@ func main() {
 	//http.HandleFunc("/", getRoot)
 	//http.HandleFunc("/endpoint", getHello)
 	funcs.Serve()
-
+	apis.Serve()
 	//http.HandleFunc(ENDPOINT_URI, getHello)
 	//http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, funcs.GetOtherHello)
 

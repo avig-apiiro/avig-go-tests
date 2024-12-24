@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func GetOtherHello(w http.ResponseWriter, r *http.Request) {
+func GetOtherHello2(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Other Hello called!\n")
 }
 

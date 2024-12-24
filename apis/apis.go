@@ -11,8 +11,8 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 	name := r.URL.Query().Get("name")
 
 	// Mock user data
-	user := funcs.GetUser(name)
-
+	user := funcs.GetUser()
+	user.Name = name
 	// Set response content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 

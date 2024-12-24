@@ -26,3 +26,8 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 }
+
+func Serve() {
+	http.HandleFunc("/user", UserHandler)
+
+}

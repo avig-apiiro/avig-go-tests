@@ -8,11 +8,11 @@ import (
 
 func UserHandler(w http.ResponseWriter, r *http.Request) {
 	// Get the "name" query parameter from the request
-	name := r.URL.Query().Get("name")
+	aname := r.URL.Query().Get("name")
 
 	// Mock user data
 	user := funcs.User{}
-	funcs.GetUser(name, &user)
+	funcs.GetUser(aname, &user)
 	// Set response content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 

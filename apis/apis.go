@@ -27,5 +27,5 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 func Serve() {
 	http.HandleFunc("/api2", UserHandler)
 	user := funcs.User{}
-	funcs.GetUser("test", &user)
+	funcs.GetUser("test2", &user)
 }

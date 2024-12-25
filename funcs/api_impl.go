@@ -6,7 +6,7 @@ import (
 	"net/http"
 )
 
-func GetOtherHello2(w http.ResponseWriter, r *http.Request) {
+func GetOtherHello(w http.ResponseWriter, r *http.Request) {
 	io.WriteString(w, "Other Hello called!\n")
 }
 
@@ -30,5 +30,4 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 
 func Serve() {
 	http.HandleFunc("/user", UserHandler)
-
 }

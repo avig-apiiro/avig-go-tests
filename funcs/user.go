@@ -7,9 +7,11 @@ type User struct {
 	Address string `json:"address"`
 }
 
-func GetUser(name string, user *User) {
+func GetUser(name string) *User {
+	user := User{}
 	user.Name = name
 	user.Email = "jhodndo@example.com"
 	user.Address = "home"
 	user.Cvv = "012"
+	return &user
 }

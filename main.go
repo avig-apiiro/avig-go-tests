@@ -24,7 +24,7 @@ func main() {
 	http.HandleFunc("/", getRoot)
 	http.HandleFunc("/endpoint", getHello)
 	apis.Serve()
-	http.HandleFunc(ENDPOINT_URI, getHello)
+	//http.HandleFunc(ENDPOINT_URI, getHello)
 	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, apis.UserHandler)
 
 	err := http.ListenAndServe(":3333", nil)

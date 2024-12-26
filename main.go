@@ -25,7 +25,8 @@ func main() {
 	http.HandleFunc("/endpoint2", getHello)
 	apis.Serve()
 	//http.HandleFunc(ENDPOINT_URI, getHello)
-	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, apis.UserHandler)
+	api := apis.UserApi{}
+	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, api.UserHandler)
 
 	err := http.ListenAndServe(":3333", nil)
 	if errors.Is(err, http.ErrServerClosed) {

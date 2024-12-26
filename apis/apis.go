@@ -6,7 +6,9 @@ import (
 	"net/http"
 )
 
-func UserHandler(w http.ResponseWriter, r *http.Request) {
+type UserApi struct{}
+
+func (userApi UserApi) UserHandler(w http.ResponseWriter, r *http.Request) {
 	// Get the "name" query parameter from the request
 	name := r.URL.Query().Get("name")
 
@@ -24,7 +26,8 @@ func UserHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func Serve() {
-	http.HandleFunc("/api2", UserHandler)
+	api := UserApi{}
+	http.HandleFunc("/api2", api.UserHandler)
 	//user := funcs.User{}
 	//funcs.GetUser("test2", &user)
 }

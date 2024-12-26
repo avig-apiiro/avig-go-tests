@@ -2,7 +2,6 @@ package main
 
 import (
 	"avig-go-tests/apis"
-	"avig-go-tests/funcs"
 	"errors"
 	"fmt"
 	"io"
@@ -26,7 +25,7 @@ func main() {
 	http.HandleFunc("/endpoint", getHello)
 	apis.Serve()
 	http.HandleFunc(ENDPOINT_URI, getHello)
-	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, funcs.GetOtherHello)
+	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, apis.UserHandler)
 
 	err := http.ListenAndServe(":3333", nil)
 	if errors.Is(err, http.ErrServerClosed) {

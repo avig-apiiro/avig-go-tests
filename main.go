@@ -23,10 +23,10 @@ func main() {
 	fmt.Println("Hello  world")
 	http.HandleFunc("/", getRoot)
 	http.HandleFunc("/endpoint2", getHello)
-	apis.Serve()
 	//http.HandleFunc(ENDPOINT_URI, getHello)
 	api := apis.UserApi{}
 	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, api.UserHandler)
+	api.Serve()
 
 	err := http.ListenAndServe(":3333", nil)
 	if errors.Is(err, http.ErrServerClosed) {

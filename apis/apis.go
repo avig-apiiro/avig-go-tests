@@ -25,9 +25,8 @@ func (userApi UserApi) UserHandler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func Serve() {
-	api := UserApi{}
-	http.HandleFunc("/api2", api.UserHandler)
+func (userApi UserApi) Serve() {
+	http.HandleFunc("/api2", userApi.UserHandler)
 	//user := funcs.User{}
 	//funcs.GetUser("test2", &user)
 }

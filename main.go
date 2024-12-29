@@ -22,7 +22,7 @@ func getHello(w http.ResponseWriter, r *http.Request) {
 func main() {
 	fmt.Println("Hello  world")
 	http.HandleFunc("/", getRoot)
-	http.HandleFunc("/endpoint2", getHello)
+	http.HandleFunc("/end_point2", getHello)
 	http.HandleFunc(ENDPOINT_URI, getHello)
 	api := apis.UserApi{}
 	http.HandleFunc(ENDPOINT_URI_BASE+ENDPOINT_URI, api.UserHandler)

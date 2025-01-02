@@ -12,13 +12,12 @@ func (userApi UserApi) UserHandler(w ResponseWriter, r *Request) {
 	// Get the "name" query parameter from the request
 	name := r.URL.Query().Get("name")
 
-	// Mock user data
-
-	user := funcs.GetUser(name)
+	//user := funcs.GetUser(name)
+	user := funcs.User{}
+	user.UserName = name
 	// Set response content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
-	// Serialize user to JSON and write to response
 	if err := json.NewEncoder(w).Encode(user); err != nil {
 		Error(w, "Failed to encode user", StatusInternalServerError)
 		return

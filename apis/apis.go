@@ -20,7 +20,7 @@ func (MyUser UserApi) UserHandler(w ResponseWriter, r *Request) {
 	w.Header().Set("Content-Type", "application/json")
 
 	if err := json.NewEncoder(w).Encode(user); err != nil {
-		Error(w, "Failed to encode user", StatusInternalServerError)
+		Error(w, "Failed to encode  user", StatusInternalServerError)
 		return
 	}
 }

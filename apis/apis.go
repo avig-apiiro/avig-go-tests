@@ -7,8 +7,9 @@ import (
 )
 
 type UserApi struct{}
+type MyUser = UserApi
 
-func (userApi UserApi) UserHandler(w ResponseWriter, r *Request) {
+func (MyUser UserApi) UserHandler(w ResponseWriter, r *Request) {
 	// Get the "name" query parameter from the request
 	name := r.URL.Query().Get("name")
 
@@ -25,5 +26,5 @@ func (userApi UserApi) UserHandler(w ResponseWriter, r *Request) {
 }
 
 func (userApi UserApi) Serve() {
-	HandleFunc("/api2", userApi.UserHandler)
+	HandleFunc("/api3", userApi.UserHandler)
 }

@@ -17,9 +17,9 @@ func gojimain() {
 	mux.HandleFunc(pat.Get("/hello/:name"), hello)
 	mux.Handle(pat.Post("/users"), usersHandler)
 
-	users := SubMux()
+	users := goji.SubMux()
 	mux.Handle(pat.New("/users/*"), users)
-	albums := SubMux()
+	albums := goji.SubMux()
 	mux.Handle(pat.New("/albums/*"), albums)
 
 	users.Handle(pat.Get("/:name"), renderProfile) // GET /users/carl
@@ -31,10 +31,10 @@ func gojimain() {
 func usersHandler(w http.ResponseWriter, r *http.Request) {
 
 }
-
 func renderProfile(w http.ResponseWriter, r *http.Request) {
 
 }
+
 func newAlbum(w http.ResponseWriter, r *http.Request) {
 
 }

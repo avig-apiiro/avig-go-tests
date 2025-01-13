@@ -36,6 +36,16 @@ func chimain() {
 	http.ListenAndServe(":3333", r)
 }
 
+func ArticleCtx(handler http.Handler) http.Handler {
+	panic("implement me")
+}
+
+func searchArticles(writer http.ResponseWriter, request *http.Request) {
+	panic("implement me")
+}
+
+type Article string
+
 func getArticle(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()
 	article, ok := ctx.Value("article").(*Article)
@@ -96,6 +106,14 @@ func adminIndex(w http.ResponseWriter, r *http.Request) {
 }
 func adminListAccounts(w http.ResponseWriter, r *http.Request) {
 	w.Write([]byte(fmt.Sprintf("title:1")))
+}
+
+type YourPermissionType struct {
+	Permission string `json:"permission"`
+}
+
+func (t YourPermissionType) IsAdmin() bool {
+	return false
 }
 
 func AdminOnly(next http.Handler) http.Handler {

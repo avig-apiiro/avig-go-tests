@@ -17,7 +17,7 @@ func main() {
 
 	group := r.Group("/api/licenses")
 	{
-		group.POST("/someOPost", posting1)
+		group.POST("/somePost", posting)
 		group.GET("/ping", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "pong",
@@ -30,9 +30,5 @@ func main() {
 }
 
 func posting(c *gin.Context) {
-	c.JSON(http.StatusOK, gin.H{"message": "Data is valid"})
-}
-
-func posting1(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"message": "Data is valid"})
 }

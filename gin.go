@@ -17,7 +17,7 @@ func main() {
 
 	group := r.Group("/api/licenses")
 	{
-		group.POST("/somePost", posting)
+		group.POST("/someOPost", posting)
 		group.GET("/ping", func(c *gin.Context) {
 			c.JSON(200, gin.H{
 				"message": "pong",

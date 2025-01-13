@@ -26,5 +26,5 @@ func (MyUser UserApi) UserHandler(w ResponseWriter, r *Request) {
 }
 
 func (userApi UserApi) Serve() {
-	HandleFunc("/api3", userApi.UserHandler)
+	HandleFunc("/api4", userApi.UserHandler)
 }

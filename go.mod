@@ -9,6 +9,7 @@ require (
 	github.com/gorilla/mux v1.8.1
 	github.com/julienschmidt/httprouter v1.3.0
 	github.com/kataras/iris/v12 v12.2.11
+	github.com/zenazn/goji v1.0.1
 	goji.io v2.0.2+incompatible
 )
 

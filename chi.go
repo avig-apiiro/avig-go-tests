@@ -67,13 +67,10 @@ func createArticle(w http.ResponseWriter, r *http.Request) {
 }
 
 func listArticles(w http.ResponseWriter, r *http.Request) {
-	ctx := r.Context()
-	article, ok := ctx.Value("article").(*Article)
-	if !ok {
-		http.Error(w, http.StatusText(422), 422)
-		return
-	}
-	w.Write([]byte(fmt.Sprintf("title:%s", article.Title)))
+	w.Write([]byte(fmt.Sprintf("title:%s", "article")))
+}
+func listArticlesByDate(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte(fmt.Sprintf("title:%s", "article")))
 }
 func deleteArticle(w http.ResponseWriter, r *http.Request) {
 	ctx := r.Context()

@@ -5,6 +5,7 @@ go 1.23
 require (
 	github.com/aws/aws-lambda-go v1.47.0
 	github.com/gin-gonic/gin v1.10.0
+	github.com/go-chi/chi/v5 v5.2.0
 	github.com/kataras/iris/v12 v12.2.11
 )
 

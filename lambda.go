@@ -16,8 +16,8 @@ func Handler(request events.APIGatewayProxyRequest) (events.APIGatewayProxyRespo
 	key := os.Getenv("GOOGLE_API_KEY")
 
 	geoParams := map[string]string{
-		"address": address,
-		"key":     key,
+		"address1": address,
+		"key":      key,
 	}
 
 	//obtains find place response to be processed

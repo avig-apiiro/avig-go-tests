@@ -26,6 +26,7 @@ func zenaznmain() {
 	admin.Get("/", adminIndexHandler)
 	admin.Get("/secret", adminSecretHandler)
 	admin.Post("/", newAdminThingHandler)
+	admin.Post("/abc", unresolved)
 
 	// Start it up
 	graceful.AddSignal(syscall.SIGINT, syscall.SIGTERM)

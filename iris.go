@@ -15,7 +15,7 @@ func irismain() {
 	{
 		v2.Post("/login", loginEndpoint)
 		v2.Put("/submit", submitEndpoint)
-		v2.Head("/read5", readEndpoint)
+		v2.Head("/read6", readEndpoint)
 	}
 	app.Listen(":8081")
 }

@@ -16,6 +16,7 @@ func (MyUser UserApi) UserHandler(w ResponseWriter, r *Request) {
 	//user := funcs.GetUser(name)
 	user := funcs.User{}
 	user.UserName = name
+	user.Email = "https://api.accuweather.com/v1/test"
 	// Set response content type to JSON
 	w.Header().Set("Content-Type", "application/json")
 
@@ -23,6 +24,7 @@ func (MyUser UserApi) UserHandler(w ResponseWriter, r *Request) {
 		Error(w, "Failed to  encode user", StatusInternalServerError)
 		return
 	}
+
 }
 
 func (userApi UserApi) Serve() {

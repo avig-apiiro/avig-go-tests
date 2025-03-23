@@ -1,0 +1,11 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+HEAD     /                                   @controllers.AuthorizationCtrl.health
+GET      /health/                            @controllers.AuthorizationCtrl.health
+
+# Registration route
+POST     /consents/missing                   @controllers.ConsentsCtrl.saveMissingConsents()
+GET      /v1/sample2:partial                 @controllers.ConsentsCtrl.searchEmployer(partial: String)
